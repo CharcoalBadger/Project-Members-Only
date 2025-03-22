@@ -1,0 +1,15 @@
+<%- include('layout') %>
+
+    <h2>Enter Admin Passcode</h2>
+
+    <% if (error) { %>
+        <p style="color: red;">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <form action="/auth/admin" method="POST">
+                <label>Passcode:</label>
+                <input type="text" name="code" required>
+                <button type="submit">Become Admin</button>
+            </form>

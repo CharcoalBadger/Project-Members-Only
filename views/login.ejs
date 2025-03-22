@@ -1,0 +1,19 @@
+<%- include('layout') %>
+
+    <h2>Login</h2>
+
+    <% if (error && error.length> 0) { %>
+        <p style="color: red;">
+            <%= error[0] %>
+        </p>
+        <% } %>
+
+            <form action="/auth/login" method="POST">
+                <label>Email:</label>
+                <input type="email" name="email" required><br>
+
+                <label>Password:</label>
+                <input type="password" name="password" required><br>
+
+                <button type="submit">Log In</button>
+            </form>

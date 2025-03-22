@@ -1,0 +1,23 @@
+<nav>
+    <% if (user) { %>
+        <p>Logged in as <%= user.first_name %>
+                <%= user.last_name %>
+        </p>
+        <a href="/auth/logout">Logout</a>
+
+        <% if (user && !user.is_admin) { %>
+            | <a href="/auth/admin">Become Admin</a>
+            <% } %>
+
+
+        <% if (!user.is_member) { %>
+            | <a href="/auth/join">Join the Club</a>
+            <% } %>
+
+                <% } else { %>
+                    <a href="/auth/login">Login</a> |
+                    <a href="/auth/signup">Sign Up</a>
+                    <% } %>
+</nav>
+
+<hr>
